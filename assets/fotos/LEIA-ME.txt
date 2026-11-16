@@ -1,0 +1,33 @@
+Imagens do curso NR 12 - Seccionadora vertical.
+Os arquivos marcados "IMAGEM A GERAR" sao PROVISORIOS. Gere cada imagem real e salve aqui com o MESMO nome.
+
+capamodulo1.png   16:9   Capa do módulo 1: Conceitos e responsabilidades
+
+m1-t-a-nr-12-e-seus-anexos.png   16:9   Doze cartões numerados com algarismos romanos de I a XII em grade 4 por 3, cada um com um ícone simples do tema do anexo (olho de sensor, livro, escada, glossário, motosserra, pão, faca, prensa, injetora, sapato, trator, plataforma elevatória), e ao lado um selo de norma com um escudo.
+
+m1-t-responsabilidades-do-trabalh.png   16:9   Uma operadora de E P I, ao lado da seccionadora vertical desligada, lendo uma instrução de trabalho presa num quadro ao lado da máquina, com o rosto voltado para o quadro, braços ao lado do corpo.
+
+capamodulo2.png   16:9   Capa do módulo 2: Conhecendo a seccionadora vertical
+
+capamodulo3.png   16:9   Capa do módulo 3: Preparação do posto e da máquina
+
+m3-erro1.png   16:9   Fotografia realista em formato 16:9, vista de frente e levemente de cima, de uma área de corte de madeira de loja de materiais de construção da Leroy Merlin com uma seccionadora vertical (quadro de apoio levemente inclinado para trás, trave horizontal, cabeça porta-lâmina com protetor, mangueiras de sucção e painel de controle). A cena tem quatro problemas visíveis e distribuídos pelo quadro: (1) chão coberto de pó e aparas de madeira; (2) o duto de exaustão parado, com o indicador apagado; (3) iluminação fraca, com uma luminária apagada sobre a máquina; (4) chapas de madeira empilhadas bloqueando a passagem de circulação. Item correto, como isca: o manual do equipamento num suporte ao lado da máquina. Sem pessoas.
+
+m3-erro2.png   16:9   Fotografia realista em formato 16:9, vista de frente e levemente de cima, de uma área de corte de madeira de loja de materiais de construção da Leroy Merlin com uma seccionadora vertical (quadro de apoio levemente inclinado para trás, trave horizontal, cabeça porta-lâmina com protetor, mangueiras de sucção e painel de controle). A cena mostra dois colaboradores ao lado da máquina, com quatro problemas visíveis: (1) uma operadora com colar comprido e pulseiras; (2) um operador com camisa larga de mangas soltas; (3) um operador de tênis aberto em vez de calçado de segurança; (4) um operador sem protetor facial e sem protetor auricular. Item correto, como isca: uma terceira colaboradora com luva tricotada, calçado de segurança, protetor facial e protetor auricular tipo concha. Ninguém perto da zona de corte.
+
+m3-erro3.png   16:9   Fotografia realista em formato 16:9, vista de frente e levemente de cima, de uma área de corte de madeira de loja de materiais de construção da Leroy Merlin com uma seccionadora vertical (quadro de apoio levemente inclinado para trás, trave horizontal, cabeça porta-lâmina com protetor, mangueiras de sucção e painel de controle). A cena tem quatro problemas visíveis na máquina: (1) o protetor da lâmina solto e torto; (2) pedaços de madeira e aparas sobre o plano de apoio do painel; (3) a faca divisora solta, fora de posição, atrás da lâmina; (4) a placa de identificação da máquina arrancada, só com os furos na lateral. Item correto, como isca: a sinalização de uso de E P I na parede ao lado, sem texto legível. Sem pessoas.
+
+m3-erro4.png   16:9   Fotografia realista em formato 16:9, vista de frente e levemente de cima, de uma área de corte de madeira de loja de materiais de construção da Leroy Merlin com uma seccionadora vertical (quadro de apoio levemente inclinado para trás, trave horizontal, cabeça porta-lâmina com protetor, mangueiras de sucção e painel de controle). A cena mostra a entrada da área de corte, com cinco problemas visíveis: (1) a porta da área de corte aberta; (2) uma cliente parada dentro da área; (3) um colaborador de outro setor, de colete laranja, dentro da área; (4) nenhum aviso de proibição de entrada na porta; (5) o manual do equipamento deixado longe da máquina, num armário distante. Item correto, como isca: a placa da máquina no lugar. Sem acidente.
+
+capamodulo4.png   16:9   Capa do módulo 4: Operação do corte
+
+capamodulo5.png   16:9   Capa do módulo 5: Limpeza, lâmina e manutenção
+
+m5-t-troca-da-lamina-preparacao.png   16:9   Uma operadora de luvas de segurança desligando a tensão no quadro elétrico, com a seccionadora vertical ao fundo, e uma chave fornecida pelo fabricante sobre a bancada.
+
+m5-t-manutencao-etiqueta-relatori.png   16:9   Close da etiqueta TAG presa à seccionadora vertical e, ao lado, um relatório de manutenção assinado sobre uma prancheta, sem texto legível e sem pessoas.
+
+capa parabens.png   16:9   Parabéns: conclusão do treinamento NR 12 da seccionadora vertical
+
+capa.png   16:9   Capa do treinamento NR 12 – Seccionadora vertical
+
