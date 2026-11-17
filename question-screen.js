@@ -1474,6 +1474,12 @@
         <div class="qs-panel qs-panel-text">
           <h2 class="qs-title">${esc(data.title || 'Associe os pares')}</h2>
           ${data.body ? `<p class="qs-body">${esc(data.body)}</p>` : ''}
+          ${data.refImage ? `
+          <details class="qs-match-ref" open>
+            <summary>${esc(data.refTitle || '📍 Consulte o desenho')}</summary>
+            <img src="${esc(data.refImage)}" alt="${esc(data.refAlt || 'Desenho de consulta')}" data-qs-match-zoom>
+            <small>Toque no desenho para ampliar</small>
+          </details>` : ''}
           <div class="qs-match-hud">
             <span data-qs-match-time>⏱️ 0s</span>
             <span data-qs-match-progress>0 de ${pairs.length} pares</span>
@@ -1696,7 +1702,7 @@
 
     var mediaBlock = hasPhoto
       ? `<div class="qs-media qs-media-hero">
-          ${mediaHTML(data, { noZoom: true })}
+          ${mediaHTML(data, { noZoom: !data.imageFull })}
           ${resultBanner}
         </div>`
       : `<div class="qs-q-head">
@@ -1705,7 +1711,7 @@
         </div>`;
 
     return `
-      <article class="qs-screen is-question${hasPhoto ? '' : ' no-photo'}${data.imageFit === 'contain' ? ' is-fit' : ''}"${data.imageFit === 'contain' && data.image ? ` style="--fit-img:url(&quot;${esc(data.image)}&quot;)"` : ''} data-qs-root data-type="question"${variant ? ` data-variant="${esc(variant)}"` : ''}>
+      <article class="qs-screen is-question${hasPhoto ? '' : ' no-photo'}${data.imageFit === 'contain' ? ' is-fit' : ''}${data.imageFull ? ' is-fit-full' : ''}"${data.imageFit === 'contain' && data.image ? ` style="--fit-img:url(&quot;${esc(data.image)}&quot;)"` : ''} data-qs-root data-type="question"${variant ? ` data-variant="${esc(variant)}"` : ''}>
         <div class="qs-timer" aria-hidden="true"><i data-qs-timer></i></div>
         ${mediaBlock}
         <div class="qs-qbar-wrap">
@@ -2752,6 +2758,16 @@
     var selectedEx = null;
     var selectedBody = null;
     var elapsed = 0;
+    var zoomImg = this.el.querySelector('[data-qs-match-zoom]');
+    if (zoomImg) {
+      zoomImg.addEventListener('click', function () {
+        var ov = document.createElement('div');
+        ov.className = 'qs-match-zoom';
+        ov.innerHTML = '<img src="' + zoomImg.getAttribute('src') + '" alt=""><span>Toque para fechar</span>';
+        ov.addEventListener('click', function () { ov.remove(); });
+        document.body.appendChild(ov);
+      });
+    }
     this._matchTick = setInterval(function () {
       elapsed += 1;
       var el = self.el.querySelector('[data-qs-match-time]');

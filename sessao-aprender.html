@@ -582,6 +582,8 @@
     var total = quizState.total || quizState.answered || 1;
     var hits = quizState.correct;
     var min = quizState.minCorrect || Math.ceil(total * 0.75);
+    /* simulação: quem pulou o desafio pela seta vê o resultado como aprovado */
+    if (demoMode && !quizState.answered) { hits = total; quizState.correct = total; }
     quizState.passed = hits >= min;
     var medal = quizMedal(quizState.passed, hits, total);
     var m = currentMod() || {};
@@ -1104,7 +1106,7 @@
     }
     if (delta > 0) {
       var s = current();
-      if (s && isQuizStep(s) && answered[s.id] && isLastQuizQuestion()) {
+      if (s && isQuizStep(s) && (answered[s.id] || demoMode) && isLastQuizQuestion()) {
         showQuizResult();
         return;
       }

@@ -101,6 +101,20 @@
     return (l ? l + ': ' : '') + t;
   }
 
+  /* Texto escrito dentro da foto (OCR / leitura da imagem). */
+  function imageWritten(value) {
+    var t = clean(stripHtml(value));
+    if (!t) return '';
+    return 'Na imagem está escrito: ' + (/[.!?]$/.test(t) ? t : t + '.');
+  }
+
+  function pushItemParts(parts, it) {
+    if (!it) return;
+    parts.push(labelled(it.title || it.label, it.text || it.body));
+    if (it.imageAlt) parts.push('Na imagem: ' + clean(it.imageAlt) + '.');
+    if (it.imageText) parts.push(imageWritten(it.imageText));
+  }
+
   /* Blocos de conteúdo na mesma ordem em que o contentBlocks() os desenha:
      corpo, números, cards, itens, comparação, tópicos, regras, citação, nota. */
   function contentParts(screen) {
@@ -111,17 +125,18 @@
     list(screen.stats).forEach(function (s) {
       parts.push(sentence(joinParts([clean(s.num), clean(s.label)])));
     });
-    list(screen.cards).forEach(function (c) {
-      parts.push(labelled(c.title, c.body));
-      if (c.imageAlt) parts.push('Na imagem: ' + clean(c.imageAlt) + '.');
+    list(screen.cards).forEach(function (c) { pushItemParts(parts, c); });
+    list(screen.items).forEach(function (it) { pushItemParts(parts, it); });
+    list(screen.compare).forEach(function (c) { pushItemParts(parts, c); });
+    list(screen.notes).forEach(function (n) { pushItemParts(parts, n); });
+    list(screen.images).forEach(function (im) {
+      if (typeof im === 'string') return;
+      if (im.label || im.alt) parts.push(sentence(im.label || im.alt));
+      if (im.imageText || im.text) parts.push(imageWritten(im.imageText || im.text));
     });
-    list(screen.items).forEach(function (it) {
-      parts.push(labelled(it.title, it.text || it.body));
-      if (it.imageAlt) parts.push('Na imagem: ' + clean(it.imageAlt) + '.');
-    });
-    list(screen.compare).forEach(function (c) {
-      parts.push(labelled(c.label, c.text || c.body));
-      if (c.imageAlt) parts.push('Na imagem: ' + clean(c.imageAlt) + '.');
+    list(screen.groups).forEach(function (g) {
+      if (g && g.label) parts.push(sentence(g.label));
+      list(g && g.items).forEach(function (it) { pushItemParts(parts, it); });
     });
     list(screen.bullets).forEach(function (b) {
       parts.push(sentence(b));
@@ -204,6 +219,8 @@
     parts = parts.concat(contentParts(screen));
 
     if (screen.imageAlt) parts.push('Na imagem: ' + clean(screen.imageAlt) + '.');
+    if (screen.imageText) parts.push(imageWritten(screen.imageText));
+    if (screen.transcriptExtra) parts.push(clean(stripHtml(screen.transcriptExtra)));
     return joinParts(parts);
   }
 

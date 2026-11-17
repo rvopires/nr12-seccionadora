@@ -5293,6 +5293,45 @@ html.qs-lightbox-open body {
   width: 100%;
   max-width: 860px;
 }
+.qs-screen.is-match .qs-match-ref { width: 100%; max-width: 860px; }
+.qs-match-ref {
+  margin: 4px auto 10px;
+  padding: 8px 10px 6px;
+  border-radius: 14px;
+  background: #fff;
+  border: 1px solid rgba(24, 40, 90, 0.14);
+  text-align: center;
+}
+.qs-match-ref summary {
+  cursor: pointer;
+  font-weight: 800;
+  font-size: 0.8rem;
+  color: #18285A;
+}
+.qs-match-ref img {
+  display: block;
+  width: 100%;
+  max-height: 38vh;
+  object-fit: contain;
+  margin: 8px auto 2px;
+  cursor: zoom-in;
+}
+.qs-match-ref small { color: var(--qs-muted); font-size: 0.7rem; }
+.qs-match-zoom {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(10, 16, 40, 0.88);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  cursor: zoom-out;
+}
+.qs-match-zoom img { max-width: 100%; max-height: 90vh; background: #fff; border-radius: 10px; }
+.qs-match-zoom span { color: #fff; font-size: 0.8rem; }
 .qs-match-hud {
   display: flex;
   justify-content: center;
@@ -8244,10 +8283,48 @@ html.qs-lightbox-open body {
 .qs-pn-grid.is-faixas .qs-pn-photo { width: clamp(90px,14vw,150px); flex: none; }
 .qs-pn-grid.is-faixas .qs-pn-n { top: 50%; left: -20px; transform: translateY(-50%); }
 @media (max-width: 760px) { .qs-pn-grid.is-grade, .qs-pn-grid.is-grade.n-3, .qs-pn-grid.is-grade.n-5, .qs-pn-grid.is-grade.n-6 { grid-template-columns: repeat(2, minmax(0,1fr)); } }
-/* PAINEL: cartão com foto — foto baixa e sem ícone, para tudo caber na tela */
-.qs-pn-grid.is-grade .qs-pn-photo { aspect-ratio: auto; height: clamp(90px, 22vh, 190px); }
-.qs-pn-card:has(.qs-pn-photo) .qs-pn-ico { display: none; }
-.qs-pn-card:has(.qs-pn-photo) { padding-top: clamp(8px, 1.4vh, 12px); }
+/* PAINEL: cartão com foto — mesma estrutura em todos (foto + ícone + texto) */
+.qs-pn-grid.is-grade { align-items: stretch; }
+.qs-pn-grid.is-grade .qs-pn-card {
+  height: 100%;
+  justify-content: flex-start;
+  padding-top: clamp(8px, 1.4vh, 12px);
+}
+.qs-pn-grid.is-grade .qs-pn-photo {
+  aspect-ratio: 1 / 1;
+  height: auto;
+  width: 100%;
+  flex: 0 0 auto;
+}
+.qs-pn-grid.is-grade .qs-pn-photo img { object-fit: cover; object-position: center; }
+.qs-pn-grid.is-grade .qs-pn-ico {
+  display: grid;
+  margin-top: -22px;
+  z-index: 2;
+  box-shadow: 0 0 0 4px #fff, 0 6px 14px rgba(28, 0, 5, .18);
+}
+.qs-pn-grid.is-grade .qs-pn-txt {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 7.2em;
+}
+.qs-pn-grid.is-grade .qs-pn-txt h3 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  min-height: 2.4em;
+}
+.qs-pn-grid.is-grade .qs-pn-txt p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+  flex: 1 1 auto;
+}
+.qs-pn-card.tone-blue { --t: #2f6fed; }
 /* LISTA COM FOTO: foto grande e inteira (os prints e as fotos do PDF são horizontais) */
 .qs-screen.is-lf .qs-lf { grid-template-columns: minmax(0, .85fr) minmax(0, 1.5fr); }
 .qs-screen.is-lf .qs-lf-photo { aspect-ratio: auto; width: 100%; height: var(--ph); box-shadow: 0 0 0 5px #fff, 0 16px 32px rgba(28, 0, 5, .3); }
@@ -8356,3 +8433,29 @@ html.qs-lightbox-open body {
 .qs-pn-grid.is-grade .qs-pn-txt h3 { font-size: clamp(1.05rem, 2.5vh, 1.35rem); }
 .qs-pn-grid.is-grade .qs-pn-txt p { font-size: clamp(.9rem, 2.1vh, 1.1rem); }
 .qs-pn-grid.is-grade .qs-pn-photo + .qs-pn-ico { display: none; }
+
+/* Pergunta com desenho técnico: mostrar a imagem inteira, sem recorte */
+.qs-app .qs-screen.is-question.is-fit-full .qs-img,
+.qs-app .qs-screen.is-question.is-fit-full .qs-img-contain { object-fit: contain; }
+.qs-app .qs-screen.is-question.is-fit-full .qs-media-hero { aspect-ratio: 3 / 2; }
+.qs-app .qs-screen.is-question.is-fit-full .qs-zoom-btn { width: 42px; height: 42px; right: 10px; bottom: 10px; }
+
+/* Ordenar: a barra do tempo era um bloco vazio com sombra acima do título.
+   Agora é uma trilha fina que se esvazia com o tempo. */
+.qs-screen.is-order .qs-qbar-wrap { margin: 8px 18px 0; }
+.qs-screen.is-order .qs-qbar {
+  padding: 0;
+  height: 8px;
+  border-radius: 999px;
+  box-shadow: none;
+  background: rgba(24, 40, 90, 0.12);
+  overflow: hidden;
+}
+.qs-screen.is-order .qs-qbar > i {
+  display: block;
+  height: 100%;
+  width: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #E8588A, #FF8FB1);
+  transition: width 0.1s linear;
+}

@@ -3,3 +3,10 @@
 Thumbs.db
 desktop.ini
 *.placeholder.bak.png
+
+.tools/
+
+
+_fix-*.js
+_patch-*.js
+
