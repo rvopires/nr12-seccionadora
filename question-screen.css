@@ -7980,7 +7980,7 @@ html.qs-lightbox-open body {
 .qs-fill-chip.is-used { opacity: .25; box-shadow: none; }
 .qs-fill-chip:disabled { cursor: default; }
 .qs-fill-fb, .qs-sort-fb { min-height: 1.4em; margin: 6px 0 0; font-weight: 800; font-size: .98rem; }
-.qs-fill-fb.is-ok, .qs-sort-fb.is-ok { color: #C23868; }
+.qs-fill-fb.is-ok, .qs-sort-fb.is-ok { color: #15803d; }
 .qs-fill-fb.is-nok, .qs-sort-fb.is-nok { color: #b71c1c; }
 
 .qs-sort-progress {
@@ -8023,7 +8023,7 @@ html.qs-lightbox-open body {
 .qs-sort-bucket.is-right { background: linear-gradient(135deg, #fb923c, #c2410c); }
 .qs-sort-card { border-color: #cbd5e1; box-shadow: 0 8px 0 rgba(30, 64, 175, .12), 0 16px 28px rgba(28, 0, 5, .12); }
 .qs-sort-card.is-shake { border-color: #d92b2b; }
-.qs-screen.is-sort .qs-sort-fb.is-ok { color: #C23868; }
+.qs-screen.is-sort .qs-sort-fb.is-ok { color: #15803d; }
 .qs-screen.is-sort .qs-sort-fb.is-nok { color: #b71c1c; }
 
 /* Completar: banco de palavras e lacunas neutros (azul); verde só quando trava certo */

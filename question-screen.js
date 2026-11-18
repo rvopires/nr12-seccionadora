@@ -2711,16 +2711,19 @@
 
     function show() {
       if (idx >= items.length) return;
+      if (fb) { fb.textContent = ''; fb.className = 'qs-sort-fb'; }
       cardEl.textContent = items[idx].text;
       cardEl.classList.remove('is-out', 'is-shake');
       void cardEl.offsetWidth;
       cardEl.classList.add('is-in');
       if (prog) prog.textContent = (idx + 1) + ' de ' + items.length;
     }
+    var sortBusy = false;
     function answer(side) {
-      if (self.state.answered || idx >= items.length) return;
+      if (self.state.answered || idx >= items.length || sortBusy) return;
       var it = items[idx];
       if (it.side === side) {
+        sortBusy = true;
         beep('ok');
         cardEl.classList.remove('is-in');
         cardEl.classList.add('is-out', side === 'left' ? 'to-left' : 'to-right');
@@ -2729,9 +2732,9 @@
         if (idx >= items.length) {
           if (prog) prog.textContent = items.length + ' de ' + items.length;
           var max = self.options.maxPoints != null ? Number(self.options.maxPoints) : 50;
-          setTimeout(function () { beep('end'); self._complete({ kind: 'sort', correct: true, points: max, tries: tries }); }, 500);
+          setTimeout(function () { beep('end'); self._complete({ kind: 'sort', correct: true, points: max, tries: tries }); }, 2200);
         } else {
-          setTimeout(show, 420);
+          setTimeout(function () { sortBusy = false; show(); }, 2200);
         }
       } else {
         tries++;

@@ -1070,8 +1070,8 @@
           else go(1);
         }, s.type === 'rhythm' ? 4000
           : (s.type === 'order' && !(result && result.correct)) ? 4500
-          : s.type === 'order' || s.type === 'match' || s.type === 'fill' || s.type === 'sort' ? 1600
-          : 3000);
+          : s.type === 'order' || s.type === 'match' || s.type === 'fill' || s.type === 'sort' ? 2500
+          : Math.min(9000, 5000 + ((s.explanation || '').length * 25)));
       },
       onContinue: handleContinue
     });

@@ -363,32 +363,32 @@ window.QUESTION_SCREEN_SESSION = {
         {
           "id": "m1-q1",
           "type": "question",
-          "question": "Referente às responsabilidades dos trabalhadores, assinale a alternativa INCORRETA:",
+          "question": "Qual destas atitudes é uma responsabilidade do trabalhador?",
           "alternatives": [
             {
               "id": "a",
-              "text": "Cumprir as orientações sobre os procedimentos seguros de operação, limpeza e manutenção",
-              "correct": false
+              "text": "Comunicar o superior se uma proteção foi removida, danificada ou perdeu a função",
+              "correct": true
             },
             {
               "id": "b",
-              "text": "Participar dos treinamentos fornecidos pelo empregador",
+              "text": "Alterar proteções mecânicas ou dispositivos de segurança, mesmo com risco à saúde",
               "correct": false
             },
             {
               "id": "c",
-              "text": "Alterar proteções mecânicas ou dispositivos de segurança, mesmo com risco à saúde",
-              "correct": true
+              "text": "Dispensar o treinamento quando já tem experiência",
+              "correct": false
             },
             {
               "id": "d",
-              "text": "Comunicar o superior se uma proteção foi removida, danificada ou perdeu a função",
+              "text": "Seguir os procedimentos de operação só quando houver fiscalização",
               "correct": false
             }
           ],
-          "explanation": "Resposta correta: Alterar proteções mecânicas ou dispositivos de segurança, mesmo com risco à saúde.",
+          "explanation": "O trabalhador deve avisar o superior quando uma proteção sai do lugar, é danificada ou perde a função. Alterar proteções é proibido.",
           "review": "Pergunta 1",
-          "transcript": "Referente às responsabilidades dos trabalhadores, assinale a alternativa INCORRETA: Opção 1: Cumprir as orientações sobre os procedimentos seguros de operação, limpeza e manutenção. Opção 2: Participar dos treinamentos fornecidos pelo empregador. Opção 3: Alterar proteções mecânicas ou dispositivos de segurança, mesmo com risco à saúde. Opção 4: Comunicar o superior se uma proteção foi removida, danificada ou perdeu a função.",
+          "transcript": "Qual destas atitudes é uma responsabilidade do trabalhador? Opção 1: Comunicar o superior se uma proteção foi removida, danificada ou perdeu a função. Opção 2: Alterar proteções mecânicas ou dispositivos de segurança, mesmo com risco à saúde. Opção 3: Dispensar o treinamento quando já tem experiência. Opção 4: Seguir os procedimentos de operação só quando houver fiscalização.",
           "confirm": true,
           "image": "assets/fotos/q-m1-1.png",
           "imageAlt": "Instrutora ao lado da seccionadora com o protetor no lugar"
@@ -419,7 +419,7 @@ window.QUESTION_SCREEN_SESSION = {
               "correct": false
             }
           ],
-          "explanation": "Resposta correta: Um dispositivo artificial que usa a conversão de energia para atingir objetivos predeterminados.",
+          "explanation": "Máquina é um dispositivo artificial que usa a conversão de energia para atingir objetivos predeterminados.",
           "review": "Pergunta 2",
           "transcript": "O que é uma máquina, segundo o treinamento? Opção 1: Um dispositivo artificial que usa a conversão de energia para atingir objetivos predeterminados. Opção 2: Qualquer ferramenta movida só por força humana. Opção 3: Todo equipamento exposto em feiras. Opção 4: Qualquer eletrodoméstico.",
           "confirm": true,
@@ -452,7 +452,7 @@ window.QUESTION_SCREEN_SESSION = {
               "correct": false
             }
           ],
-          "explanation": "Resposta correta: Obrigatória.",
+          "explanation": "A formação em NR 12 é obrigatória para quem usa a máquina.",
           "review": "Pergunta 3",
           "transcript": "Para utilizar a máquina seccionadora vertical, a formação em NR 12 é: Opção 1: Obrigatória. Opção 2: Opcional. Opção 3: Necessária só para a manutenção. Opção 4: Dispensada para quem tem experiência.",
           "confirm": true,
@@ -485,7 +485,7 @@ window.QUESTION_SCREEN_SESSION = {
               "correct": false
             }
           ],
-          "explanation": "Resposta correta: 60 mm.",
+          "explanation": "O limite da seccionadora vertical é 60 mm de espessura.",
           "review": "Pergunta 4",
           "transcript": "A seccionadora vertical corta chapas e painéis de madeira até qual espessura? Opção 1: 30 mm. Opção 2: 60 mm. Opção 3: 100 mm. Opção 4: Não há limite.",
           "confirm": true,
@@ -518,7 +518,7 @@ window.QUESTION_SCREEN_SESSION = {
               "correct": false
             }
           ],
-          "explanation": "Resposta correta: Anexo II.",
+          "explanation": "O conteúdo programático da capacitação está no Anexo II.",
           "review": "Pergunta 5",
           "transcript": "Qual anexo da NR 12 trata do conteúdo programático da capacitação? Opção 1: Anexo I. Opção 2: Anexo II. Opção 3: Anexo III. Opção 4: Anexo IV.",
           "confirm": true,
@@ -551,7 +551,7 @@ window.QUESTION_SCREEN_SESSION = {
               "correct": false
             }
           ],
-          "explanation": "Resposta correta: Máquina certificada pelo Inmetro, com todos os requisitos técnicos de segurança atendidos.",
+          "explanation": "A NR 12 não se aplica à máquina certificada pelo Inmetro que atende a todos os requisitos técnicos de segurança.",
           "review": "Pergunta 6",
           "transcript": "A NR 12 NÃO se aplica a qual destas situações? Opção 1: Máquina certificada pelo Inmetro, com todos os requisitos técnicos de segurança atendidos. Opção 2: A seccionadora vertical usada para cortar chapas na loja. Opção 3: Máquina em uso produtivo, sem nenhuma exceção prevista. Opção 4: Qualquer máquina de corte de madeira.",
           "confirm": true,
@@ -563,7 +563,7 @@ window.QUESTION_SCREEN_SESSION = {
     {
       "id": 2,
       "title": "Conhecendo a seccionadora vertical",
-      "meta": "Vídeos e telas · desafio Qual é a peça?",
+      "meta": "Vídeos e telas · desafio Verdadeiro ou Falso",
       "titleUnlock": {
         "title": "MÁQUINA CONHECIDA",
         "body": "Você conhece as partes da seccionadora, a capacidade de corte e a sinalização.",
@@ -803,152 +803,63 @@ window.QUESTION_SCREEN_SESSION = {
         {
           "id": "m2-quiz-intro",
           "type": "quiz-intro",
-          "title": "Desafio — Qual é a peça?",
-          "count": 4,
-          "minCorrect": 3,
-          "icon": "🧩",
-          "body": "4 perguntas rápidas com o desenho da seccionadora sempre à vista: não precisa decorar. Mínimo de <strong>3 acertos</strong> para avançar.",
-          "transcript": "Desafio, Qual é a peça? 4 perguntas com o desenho à vista."
+          "title": "Desafio — Verdadeiro ou Falso",
+          "count": 1,
+          "minCorrect": 1,
+          "icon": "✅",
+          "body": "Leia cada frase e diga se é <strong>verdadeira</strong> ou <strong>falsa</strong>. Não precisa decorar nomes nem números.",
+          "transcript": "Desafio, Verdadeiro ou Falso. Leia cada frase e diga se é verdadeira ou falsa."
         },
         {
-          "id": "m2-q1",
-          "type": "question",
-          "question": "Olhe o desenho. Qual é o nome do componente marcado com a letra B?",
-          "alternatives": [
+          "id": "m2-vf",
+          "type": "sort",
+          "title": "Verdadeiro ou falso?",
+          "body": "Uma frase por vez: escolha o grupo certo.",
+          "leftLabel": "VERDADEIRO",
+          "rightLabel": "FALSO",
+          "items": [
             {
-              "id": "a",
-              "text": "Quadro, plano ou superfície de apoio",
-              "correct": false
+              "text": "O painel fica apoiado no quadro, levemente inclinado para trás.",
+              "side": "left",
+              "why": "O quadro tem a superfície de apoio inclinada a 6 graus."
             },
             {
-              "id": "b",
-              "text": "Trave ou barra transversal",
-              "correct": true
+              "text": "A cabeça porta-lâmina só consegue cortar na vertical.",
+              "side": "right",
+              "why": "Ela corta na horizontal e na vertical."
             },
             {
-              "id": "c",
-              "text": "Unidade de corte (cabeça porta-lâmina)",
-              "correct": false
+              "text": "Na trave ficam os carrinhos que movimentam a cabeça porta-lâmina.",
+              "side": "left",
+              "why": "Os carrinhos deslizantes ficam na trave."
             },
             {
-              "id": "d",
-              "text": "Sistema de extração e transporte de cavacos e poeiras",
-              "correct": false
+              "text": "Os cavacos e a poeira são retirados por mangueiras de sucção.",
+              "side": "left",
+              "why": "É o sistema de extração de cavacos e poeiras."
+            },
+            {
+              "text": "A seccionadora corta painéis de qualquer espessura.",
+              "side": "right",
+              "why": "O limite é 60 mm de espessura."
+            },
+            {
+              "text": "A superfície de apoio recebe painéis de até 4,20 m × 2,20 m.",
+              "side": "left",
+              "why": "São 4,20 m de comprimento e 2,20 m de altura."
+            },
+            {
+              "text": "A cabeça porta-lâmina é a unidade de corte da máquina.",
+              "side": "left",
+              "why": "É nela que fica a lâmina."
+            },
+            {
+              "text": "O quadro é a parte que faz o corte da madeira.",
+              "side": "right",
+              "why": "O corte é feito pela cabeça porta-lâmina. O quadro só apoia o painel."
             }
           ],
-          "explanation": "Resposta correta: Trave ou barra transversal.",
-          "review": "Pergunta 1",
-          "transcript": "Olhe o desenho. Qual é o nome do componente marcado com a letra B? Opção 1: Quadro, plano ou superfície de apoio. Opção 2: Trave ou barra transversal. Opção 3: Unidade de corte (cabeça porta-lâmina). Opção 4: Sistema de extração e transporte de cavacos e poeiras.",
-          "confirm": true,
-          "image": "assets/fotos/slides/slide-19.png",
-          "imageFit": "contain",
-          "imageFull": true,
-          "imageAlt": "Desenho da seccionadora com as letras A a D e as peças numeradas de 1 a 33"
-        },
-        {
-          "id": "m2-q2",
-          "type": "question",
-          "question": "Olhe o desenho. Qual é o nome do componente marcado com a letra D?",
-          "alternatives": [
-            {
-              "id": "a",
-              "text": "Quadro, plano ou superfície de apoio",
-              "correct": false
-            },
-            {
-              "id": "b",
-              "text": "Trave ou barra transversal",
-              "correct": false
-            },
-            {
-              "id": "c",
-              "text": "Unidade de corte (cabeça porta-lâmina)",
-              "correct": false
-            },
-            {
-              "id": "d",
-              "text": "Sistema de extração e transporte de cavacos e poeiras",
-              "correct": true
-            }
-          ],
-          "explanation": "Resposta correta: Sistema de extração e transporte de cavacos e poeiras.",
-          "review": "Pergunta 2",
-          "transcript": "Olhe o desenho. Qual é o nome do componente marcado com a letra D? Opção 1: Quadro, plano ou superfície de apoio. Opção 2: Trave ou barra transversal. Opção 3: Unidade de corte (cabeça porta-lâmina). Opção 4: Sistema de extração e transporte de cavacos e poeiras.",
-          "confirm": true,
-          "image": "assets/fotos/slides/slide-19.png",
-          "imageFit": "contain",
-          "imageFull": true,
-          "imageAlt": "Desenho da seccionadora com as letras A a D e as peças numeradas de 1 a 33"
-        },
-        {
-          "id": "m2-q3",
-          "type": "question",
-          "question": "Olhe o desenho. Qual é o nome da peça marcada com o número 16?",
-          "alternatives": [
-            {
-              "id": "a",
-              "text": "Cabeça porta-lâmina",
-              "correct": true
-            },
-            {
-              "id": "b",
-              "text": "Armário elétrico",
-              "correct": false
-            },
-            {
-              "id": "c",
-              "text": "Rodas para movimentação dos painéis",
-              "correct": false
-            },
-            {
-              "id": "d",
-              "text": "Mangueira de sucção",
-              "correct": false
-            }
-          ],
-          "explanation": "Resposta correta: Cabeça porta-lâmina.",
-          "review": "Pergunta 3",
-          "transcript": "Olhe o desenho. Qual é o nome da peça marcada com o número 16? Opção 1: Cabeça porta-lâmina. Opção 2: Armário elétrico. Opção 3: Rodas para movimentação dos painéis. Opção 4: Mangueira de sucção.",
-          "confirm": true,
-          "image": "assets/fotos/slides/slide-19.png",
-          "imageFit": "contain",
-          "imageFull": true,
-          "imageAlt": "Desenho da seccionadora com as letras A a D e as peças numeradas de 1 a 33"
-        },
-        {
-          "id": "m2-q4",
-          "type": "question",
-          "question": "Olhe o desenho. Qual é o nome da peça marcada com o número 31?",
-          "alternatives": [
-            {
-              "id": "a",
-              "text": "Cabeça porta-lâmina",
-              "correct": false
-            },
-            {
-              "id": "b",
-              "text": "Pés ajustáveis",
-              "correct": false
-            },
-            {
-              "id": "c",
-              "text": "Armário elétrico",
-              "correct": true
-            },
-            {
-              "id": "d",
-              "text": "Mangueira de sucção",
-              "correct": false
-            }
-          ],
-          "explanation": "Resposta correta: Armário elétrico.",
-          "review": "Pergunta 4",
-          "transcript": "Olhe o desenho. Qual é o nome da peça marcada com o número 31? Opção 1: Cabeça porta-lâmina. Opção 2: Pés ajustáveis. Opção 3: Armário elétrico. Opção 4: Mangueira de sucção.",
-          "confirm": true,
-          "image": "assets/fotos/slides/slide-19.png",
-          "imageFit": "contain",
-          "imageFull": true,
-          "imageAlt": "Desenho da seccionadora com as letras A a D e as peças numeradas de 1 a 33"
+          "review": "Verdadeiro ou falso"
         }
       ]
     },
@@ -1179,7 +1090,7 @@ window.QUESTION_SCREEN_SESSION = {
               "correct": false
             }
           ],
-          "explanation": "O erro da cena: pó e aparas espalhados pelo chão. Mantenha sempre o local limpo: pó e aparas deixam o chão escorregadio. O manual está perto da máquina, a iluminação é suficiente e a proteção da lâmina está no lugar.",
+          "explanation": "Pó e aparas no chão deixam o piso escorregadio. Mantenha o local limpo.",
           "review": "Cena 1 · O local de trabalho",
           "transcript": "Olhe a cena. O que está ERRADO nela? Opção 1: Pó e aparas espalhados pelo chão. Opção 2: Manual do equipamento longe da máquina. Opção 3: Iluminação insuficiente. Opção 4: Proteção da lâmina retirada.",
           "variant": "cartoes",
@@ -1214,7 +1125,7 @@ window.QUESTION_SCREEN_SESSION = {
               "correct": false
             }
           ],
-          "explanation": "O erro da cena: colar e pulseiras. Retire pulseiras, colares e qualquer objeto que possa ser pego ou enroscar na máquina. O colaborador está com capacete, colete refletivo e luvas.",
+          "explanation": "Colar e pulseiras podem enroscar na máquina. Retire antes de operar.",
           "review": "Cena 2 · Quem vai operar",
           "transcript": "Olhe o colaborador. O que está ERRADO nele? Opção 1: Colar e pulseiras no colaborador. Opção 2: Sem capacete. Opção 3: Sem colete refletivo. Opção 4: Sem luvas.",
           "variant": "cartoes",
@@ -1249,7 +1160,7 @@ window.QUESTION_SCREEN_SESSION = {
               "correct": false
             }
           ],
-          "explanation": "O erro da cena: pedaços de madeira e aparas no plano de apoio. O plano de apoio do painel deve estar em ordem e sem aparas ou pedaços de madeira. A sinalização de E P I está na parede, o protetor da lâmina está no lugar e o exaustor está ligado à máquina.",
+          "explanation": "O plano de apoio deve ficar sem aparas e pedaços de madeira.",
           "review": "Cena 3 · A máquina",
           "transcript": "Olhe a máquina. O que está ERRADO nela? Opção 1: Pedaços de madeira e aparas no plano de apoio. Opção 2: Protetor da lâmina solto. Opção 3: Sinalização de E P I ausente. Opção 4: Exaustor desconectado.",
           "variant": "cartoes",
@@ -1284,7 +1195,7 @@ window.QUESTION_SCREEN_SESSION = {
               "correct": false
             }
           ],
-          "explanation": "O erro da cena: porta aberta e pessoas de fora dentro da área. A área de corte deve ficar fechada, com aviso de proibição de entrada. É proibida a entrada de clientes e de colaboradores de outros setores da loja. Também falta o aviso na porta.",
+          "explanation": "A área de corte fica fechada, com aviso de proibição de entrada para quem não é do setor.",
           "review": "Cena 4 · Acesso à área de corte",
           "transcript": "Olhe a entrada. O que está ERRADO nela? Opção 1: A porta está aberta e há pessoas de fora dentro da área. Opção 2: A porta está fechada. Opção 3: Só o operador está na área de corte. Opção 4: Há um aviso de proibição de entrada na porta.",
           "variant": "cartoes",
