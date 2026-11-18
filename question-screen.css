@@ -7595,10 +7595,12 @@ html.qs-lightbox-open body {
   border-radius: 50%; box-shadow: 0 0 0 4px #fff, 0 8px 16px rgba(28, 0, 5, .16);
 }
 .qs-ac-item.is-ico-only .qs-ac-fb { display: grid; opacity: 1; font-size: 2.4rem; }
-.qs-ac-item.is-ico-only .qs-ac-body { overflow: hidden; }
+.qs-ac-item.is-ico-only .qs-ac-body { overflow-x: hidden; overflow-y: auto; }
 .qs-ac-item.is-ico-only .qs-ac-txt { justify-content: center; padding-right: 8px; min-width: 0; }
 .qs-ac-item.is-ico-only .qs-ac-rule {
-  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 6; overflow: hidden;
+  overflow: visible;
+  display: block;
+  white-space: normal;
 }
 .qs-ac-txt { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; justify-content: center; gap: 8px; }
 .qs-ac-count { align-self: flex-start; padding: 3px 12px; border-radius: 999px; background: var(--tone); color: #fff; font-family: var(--qs-font-h); font-weight: 900; font-size: .85rem; }
@@ -8256,8 +8258,8 @@ html.qs-lightbox-open body {
 /* p. 40: imagem inteira (sem cortar a logo nas bordas); a sobra é branca, igual ao fundo das telas */
 .qs-screen.is-equip-steps .qs-step.has-photo .qs-step-img { object-fit: contain; object-position: center; background: #fff; }
 
-/* PAINEL: cartões sempre à vista, sem rolagem */
-.qs-screen.is-painel .qs-panel-text { overflow: hidden; justify-content: center; align-items: center; gap: 0; }
+/* PAINEL: cartões sempre à vista; se faltar altura, rola em vez de cortar a legenda */
+.qs-screen.is-painel .qs-panel-text { overflow-x: hidden; overflow-y: auto; justify-content: center; align-items: center; gap: 0; }
 .qs-pn-hint { margin: 0 auto clamp(8px,1.6vh,14px); text-align: center; font-family: var(--qs-font-h); font-weight: 800; font-size: clamp(.95rem,1.7vh,1.1rem); color: #E8588A; }
 .qs-pn-panel { width: 100%; max-width: 1040px; margin: 0 auto; }
 .qs-pn-panel.is-on { display: block; }
@@ -8286,7 +8288,8 @@ html.qs-lightbox-open body {
 /* PAINEL: cartão com foto — mesma estrutura em todos (foto + ícone + texto) */
 .qs-pn-grid.is-grade { align-items: stretch; }
 .qs-pn-grid.is-grade .qs-pn-card {
-  height: 100%;
+  height: auto;
+  min-height: 0;
   justify-content: flex-start;
   padding-top: clamp(8px, 1.4vh, 12px);
 }
@@ -8308,22 +8311,17 @@ html.qs-lightbox-open body {
   display: flex;
   flex-direction: column;
   width: 100%;
-  min-height: 7.2em;
+  min-height: 0;
 }
 .qs-pn-grid.is-grade .qs-pn-txt h3 {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  overflow: hidden;
-  min-height: 2.4em;
+  overflow: visible;
+  min-height: 0;
 }
 .qs-pn-grid.is-grade .qs-pn-txt p {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 4;
-  overflow: hidden;
-  flex: 1 1 auto;
+  overflow: visible;
+  flex: 0 1 auto;
 }
+/* Legendas sem corte: cartões crescem e o painel rola se precisar */
 .qs-pn-card.tone-blue { --t: #2f6fed; }
 /* LISTA COM FOTO: foto grande e inteira (os prints e as fotos do PDF são horizontais) */
 .qs-screen.is-lf .qs-lf { grid-template-columns: minmax(0, .85fr) minmax(0, 1.5fr); }
@@ -8426,13 +8424,22 @@ html.qs-lightbox-open body {
 .qs-app .qs-screen.is-question.is-fit .qs-media-hero::before { display: none; }
 .qs-app .qs-screen.is-question.is-fit .qs-media-hero { flex: 1 1 0; min-height: 0; aspect-ratio: 2 / 1; align-self: center; width: auto; max-width: calc(100% - 36px); margin: 14px 18px 0; border-radius: 20px; border: 4px solid #E8588A; background: #fff; box-shadow: 0 14px 30px rgba(28,0,5,.25); }
 .qs-app .qs-screen.is-question.is-fit .qs-img { object-fit: cover; }
-/* painel em grade: cartões maiores quando não há fotos */
-.qs-pn-grid.is-grade .qs-pn-card { justify-content: center; min-height: clamp(130px, 36vh, 330px); }
-.qs-pn-grid.is-grade.n-5 .qs-pn-card, .qs-pn-grid.is-grade.n-6 .qs-pn-card { min-height: clamp(120px, 24vh, 220px); }
-.qs-pn-grid.is-grade .qs-pn-ico { width: clamp(52px, 10vh, 84px); height: clamp(52px, 10vh, 84px); font-size: clamp(1.8rem, 5.2vh, 2.8rem); }
-.qs-pn-grid.is-grade .qs-pn-txt h3 { font-size: clamp(1.05rem, 2.5vh, 1.35rem); }
-.qs-pn-grid.is-grade .qs-pn-txt p { font-size: clamp(.9rem, 2.1vh, 1.1rem); }
+/* painel em grade: cartões maiores quando não há fotos; legenda completa */
+.qs-pn-grid.is-grade .qs-pn-card { justify-content: center; min-height: 0; height: auto; }
+.qs-pn-grid.is-grade.n-4 .qs-pn-card,
+.qs-pn-grid.is-grade.n-5 .qs-pn-card,
+.qs-pn-grid.is-grade.n-6 .qs-pn-card { min-height: 0; }
+.qs-pn-grid.is-grade .qs-pn-ico { width: clamp(44px, 7.5vh, 72px); height: clamp(44px, 7.5vh, 72px); font-size: clamp(1.5rem, 4.2vh, 2.4rem); }
+.qs-pn-grid.is-grade .qs-pn-txt h3 { font-size: clamp(.98rem, 2.2vh, 1.22rem); }
+.qs-pn-grid.is-grade .qs-pn-txt p { font-size: clamp(.86rem, 1.9vh, 1.02rem); line-height: 1.32; }
 .qs-pn-grid.is-grade .qs-pn-photo + .qs-pn-ico { display: none; }
+.qs-pn-grid.is-grade .qs-pn-card:not(:has(.qs-pn-photo)) {
+  padding: clamp(10px, 1.6vh, 14px) clamp(10px, 1.2vw, 14px) clamp(12px, 1.8vh, 16px);
+  gap: clamp(4px, .8vh, 8px);
+}
+.qs-pn-grid.is-grade .qs-pn-card:not(:has(.qs-pn-photo)) .qs-pn-ico {
+  margin-top: 0;
+}
 
 /* Pergunta com desenho técnico: mostrar a imagem inteira, sem recorte */
 .qs-app .qs-screen.is-question.is-fit-full .qs-img,
